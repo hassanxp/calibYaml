@@ -1,0 +1,19 @@
+#
+# initial detectorMap
+#
+# The files are to be found in dirName, taken to be relative to --dataDir if
+# not an absolute path
+#
+init:
+  dirName: "$DRP_STELLA_DATA_DIR/raw"
+  arms: [r1, b1]
+  detectorMapFmt: "detectorMap-sim-{arm}.fits"
+
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlock:
+  -
+    name: my_calib
+    detectorMap:
+      id: visit=68100 arm=r

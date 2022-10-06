@@ -1,0 +1,39 @@
+#
+# initial detectorMap
+#
+# The files are to be found in dirName, taken to be relative to --dataDir if
+# not an absolute path
+#
+init:
+  dirName: "$DRP_STELLA_DATA_DIR/raw"
+  arms: [r1, b1]
+  detectorMapFmt: "detectorMap-sim-{arm}.fits"
+
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlock:
+  -
+    name: test_calib
+    bias:
+      id: "field=BIAS"
+    dark:
+      id: "field=DARK"
+    flat:
+      id: "field=FLAT"
+    fiberProfiles:
+      group:
+        -
+          id: "field=FLAT_ODD"
+        -
+          id: "field=FLAT_EVEN"
+    detectorMap:
+      id: "field=ARC"
+
+#
+# Blocks of science pipelines
+#
+scienceBlock:
+  -
+    name: test_science
+    id: "field=OBJECT"
