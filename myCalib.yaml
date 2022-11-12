@@ -5,8 +5,8 @@
 # not an absolute path
 #
 init:
-  dirName: "$DRP_STELLA_DATA_DIR/raw"
-  arms: [r1, b1]
+  dirName: "$DRP_PFS_DATA_DIR/detectorMap"
+  arms: [r1]
   detectorMapFmt: "detectorMap-sim-{arm}.fits"
 
 #
@@ -14,6 +14,16 @@ init:
 #
 calibBlock:
   -
-    name: my_calib
+    name: calibs_for_r1
+    fiberProfiles:
+      group:
+        -
+          id: ["visit=68351", "arm=r", "spectrograph=1"]
+  -
+    name: arc_r1
     detectorMap:
-      id: visit=68100 arm=r
+      id: ["visit=67752..67757^68093..68100", "arm=r", "spectrograph=1"]
+      config:
+        - "fitDetectorMap.doSlitOffsets=True"
+        - "reduceExposure.readLineList.exclusionRadius=0.3"
+        - "fitDetectorMap.minSignalToNoise=20"
