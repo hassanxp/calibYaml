@@ -14,11 +14,11 @@ init:
 #
 calibBlock:
   -
-    name: calibs-r
+    name: calibs-b
     bias:
-      id: ["visit=81901..81915", "arm=b", "spectrograph=3"]
+      id: ["visit=81928..81943", "arm=b", "spectrograph=3"]
     dark:
-      id: ["visit=81886..81900", "arm=b", "spectrograph=3"]
+      id: ["visit=81832..81846", "arm=b", "spectrograph=3"]
     flat:
       id: ["visit=81880", "arm=b", "spectrograph=3"]
     bootstrap:
@@ -26,12 +26,14 @@ calibBlock:
         -
           flatId: ["visit=81880", "arm=b", "spectrograph=3"]
           arcId: ["visit=81869", "arm=b", "spectrograph=3"]
+          configfile: "bootstrap_config.py" # for lamp override
     fiberProfiles:
       group:
         -
           id: ["visit=81880", "arm=b", "spectrograph=3"]
     detectorMap:
-      id: ["visit=81869..81874", "arm=b", "spectrograph=3"]
+      id: ["visit=81869^81871", "arm=b", "spectrograph=3"]
+      configfile: "reduceArc_config.py" # for lamp override
       config:
         - "reduceExposure.isr.doFlat=False"
         - "fitDetectorMap.doSlitOffsets=True"
