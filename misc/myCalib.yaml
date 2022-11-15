@@ -1,0 +1,32 @@
+#
+# initial detectorMap
+#
+# The files are to be found in dirName, taken to be relative to --dataDir if
+# not an absolute path
+#
+init:
+  dirName: "$DRP_PFS_DATA_DIR/detectorMap"
+  arms: [r1]
+  detectorMapFmt: "detectorMap-sim-{arm}.fits"
+
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlock:
+  -
+    name: calibs_for_br1
+    bootstrap:
+      group:
+       -
+        flatId: "field=FLAT"
+        arcId: "field=ARC"
+
+    fiberProfiles:
+      group:
+        -
+          id: ["visit=68351", "arm=r", "spectrograph=1"]
+          config:
+          - isr.doFlat=False
+          - isr.doApplyGains=True
+          - profiles.profileRadius=3
+          - repair.doCosmicRay=False

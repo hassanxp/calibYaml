@@ -1,0 +1,38 @@
+#
+# initial detectorMap
+#
+# The files are to be found in dirName, taken to be relative to --dataDir if
+# not an absolute path
+#
+init:
+  dirName: "$DRP_PFS_DATA_DIR/detectorMap"
+  arms: [b1, r1, n1, m1]
+  detectorMapFmt: "detectorMap-sim-{arm}.fits"
+
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlock:
+  -
+    name: calibs-b
+    bias:
+      id: ["visit=45677..45691", "arm=b"]
+    dark:
+      id: ["visit=45692..45706", "arm=b"]
+    flat:
+      id: ["visit=45739", "arm=b"]
+    bootstrap:
+      group:
+          flatId: ["visit=45739", "arm=b"]
+          arcId: ["visit=45744", "arm=b"]
+    fiberProfiles:
+      group:
+        -
+          id: ["visit=45739", "arm=b"]
+    detectorMap:
+      id: ["visit=45743..45746", "arm=b"]
+      config:
+        - "reduceExposure.isr.doFlat=False"
+        - "fitDetectorMap.doSlitOffsets=True"
+        - "reduceExposure.readLineList.exclusionRadius=0.3"
+        - "fitDetectorMap.minSignalToNoise=20"

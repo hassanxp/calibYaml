@@ -1,0 +1,8 @@
+calibBlock:
+  -
+    name: calibs_for_br1
+    bootstrap:
+      group:
+        -
+          flatId: "field=FLAT"
+          arcId: "field=ARC"
