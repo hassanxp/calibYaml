@@ -6,7 +6,7 @@
 #
 init:
   dirName: "$DRP_PFS_DATA_DIR/detectorMap"
-  arms: [b3, r3, n3, m3]
+  arms: [b1, r1, n1, m1]
   detectorMapFmt: "detectorMap-sim-{arm}.fits"
 
 #
@@ -16,6 +16,6 @@ calibBlock:
   -
     name: calibs-br
     bias:
-      id: ["visit=81928..81943", "arm=b^r", "spectrograph=3"]
+      id: ["visit=82130..82150", "arm=b^r", "spectrograph=1"]
     dark:
-      id: ["visit=81832..81846", "arm=b^r", "spectrograph=3"]
+      id: ["visit=82151..82171", "arm=b^r", "spectrograph=1"]

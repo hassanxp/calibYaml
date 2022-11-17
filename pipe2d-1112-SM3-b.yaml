@@ -19,21 +19,21 @@ calibBlock:
       id: ["visit=81928..81943", "arm=b", "spectrograph=3"]
     dark:
       id: ["visit=81832..81846", "arm=b", "spectrograph=3"]
-    flat:
-      id: ["visit=81880", "arm=b", "spectrograph=3"]
     bootstrap:
       group:
         -
           flatId: ["visit=81880", "arm=b", "spectrograph=3"]
           arcId: ["visit=81869", "arm=b", "spectrograph=3"]
-          configfile: "bootstrap_config.py" # for lamp override
+          configfile: bootstrap_config.py
     fiberProfiles:
       group:
         -
-          id: ["visit=81880", "arm=b", "spectrograph=3"]
+          id: ["visit=82113..82127", "arm=b", "spectrograph=3"]
+          config:
+            - "isr.doFlat=False"
+            - "profiles.profileRadius=3"
     detectorMap:
-      id: ["visit=81869^81871", "arm=b", "spectrograph=3"]
-      configfile: "reduceArc_config.py" # for lamp override
+      id: ["visit=81964..81978", "arm=b", "spectrograph=3"]
       config:
         - "reduceExposure.isr.doFlat=False"
         - "fitDetectorMap.doSlitOffsets=True"

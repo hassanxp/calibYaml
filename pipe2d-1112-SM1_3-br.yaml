@@ -1,0 +1,20 @@
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlock:
+  -
+    name: calibs-br
+    fiberProfiles:
+      group:
+        -
+          id: ["visit=82113..82127", "arm=b^r"]
+          config:
+            - "isr.doFlat=False"
+            - "profiles.profileRadius=3"
+    detectorMap:
+      id: ["visit=81964..81978", "arm=b^r"]
+      config:
+        - "reduceExposure.isr.doFlat=False"
+        - "fitDetectorMap.doSlitOffsets=True"
+        - "reduceExposure.readLineList.exclusionRadius=0.3"
+        - "fitDetectorMap.minSignalToNoise=20"
