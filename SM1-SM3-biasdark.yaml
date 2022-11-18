@@ -1,0 +1,10 @@
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlock:
+  -
+    name: calibs-br
+    bias:
+      id: ["visit=82130..82150", "arm=b^r", "spectrograph=1^3"]
+    dark:
+      id: ["visit=82151..82171", "arm=b^r", "spectrograph=1^3"]
